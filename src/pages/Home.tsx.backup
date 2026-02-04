@@ -1,0 +1,222 @@
+import { Link } from 'react-router-dom'
+import { ArrowRight, Clock, MapPin, Star, Utensils, X } from 'lucide-react'
+import { useState } from 'react'
+import SEO from '../components/SEO'
+
+const Home = () => {
+  const [showDemoModal, setShowDemoModal] = useState<string | null>(null)
+
+  return (
+    <>
+      <SEO 
+        title="Flavor Haven - Premium Fine Dining Experience"
+        description="Experience culinary excellence at Flavor Haven, San Francisco's premier fine dining restaurant. Farm-to-table cuisine, Michelin-star quality, and unforgettable dining memories since 2009."
+        keywords="fine dining, san francisco restaurant, michelin star, farm to table, culinary excellence, gourmet cuisine, reservations"
+        image="/og-home.jpg"
+        url="https://flavorhaven.com"
+      />
+      
+      <div className="min-h-screen">
+        {/* Hero Section */}
+        <section className="relative h-[600px] overflow-hidden">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <div className="w-full h-full bg-cover bg-center bg-no-repeat" 
+                 style={{
+                      backgroundImage: "url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
+                 }}>
+              <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
+            </div>
+          </div>
+          
+          {/* Content */}
+          <div className="relative h-full flex items-center">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+              <div className="space-y-8">
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+                  Welcome to <span className="text-orange-500">Flavor Haven</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-200 max-w-2xl">
+                  Experience culinary excellence with our farm-to-table dining. Fresh ingredients, authentic flavors, and unforgettable memories.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    to="/menu"
+                    className="inline-flex items-center px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
+                  >
+                    View Menu
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
+                  <Link
+                    to="/reservations"
+                    className="inline-flex items-center px-8 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                  >
+                    Book Your Table
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Why Choose <span className="text-orange-600">Flavor Haven</span>
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                We pride ourselves on delivering exceptional dining experiences that keep our customers coming back.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                  <Utensils className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Fresh Ingredients</h3>
+                <p className="text-gray-600">
+                  Locally sourced ingredients prepared daily by our expert chefs.
+                </p>
+              </div>
+              
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                  <Clock className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Quick Service</h3>
+                <p className="text-gray-600">
+                  Fast and efficient service without compromising on quality.
+                </p>
+              </div>
+              
+              <div className="text-center space-y-4">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto">
+                  <MapPin className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">Convenient Location</h3>
+                <p className="text-gray-600">
+                  Easily accessible in the heart of downtown with parking available.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">10,000+</div>
+                <div className="text-gray-600">Happy Customers</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">50+</div>
+                <div className="text-gray-600">Menu Items</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">15+</div>
+                <div className="text-gray-600">Years Serving</div>
+              </div>
+              <div>
+                <div className="text-4xl font-bold text-orange-600 mb-2">20+</div>
+                <div className="text-gray-600">Daily Specials</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-orange-600">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Ready for an Unforgettable Dining Experience?
+            </h2>
+            <p className="text-xl text-orange-100 mb-8 max-w-2xl mx-auto">
+              Reserve your table today and let us create the perfect dining experience for you.
+            </p>
+            <Link
+              to="/reservations"
+              className="inline-flex items-center px-8 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              Book Your Table
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
+        </section>
+
+        {/* Demo Modal */}
+        {showDemoModal && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4"
+               onClick={() => setShowDemoModal(null)}>
+            <div className="bg-white rounded-3xl max-w-lg w-full shadow-2xl transform transition-all duration-300 ease-out border border-gray-100"
+                 onClick={(e) => e.stopPropagation()}>
+              <div className="relative overflow-hidden rounded-3xl">
+                {/* Modal Header with Gradient */}
+                <div className="bg-linear-to-r from-gray-900 to-gray-800 p-6 text-white relative">
+                  <button className="absolute top-4 right-4 w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-200"
+                          onClick={() => setShowDemoModal(null)}>
+                    <X className="w-4 h-4 text-white" />
+                  </button>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                      <Utensils className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl font-bold mb-1">Flavor Haven</h2>
+                      <p className="text-gray-300 text-sm">Premium Dining Experience</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-6 space-y-6">
+                  <div className="text-center space-y-6">
+                    <div className="space-y-3">
+                      <h3 className="text-xl font-semibold text-gray-900">Reservation System</h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        This is a demonstration of our reservation system. In a complete implementation, your table booking would be processed with our signature attention to detail.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gray-50 border border-gray-200 rounded-xl p-5">
+                      <h4 className="font-semibold text-gray-900 mb-3">Features</h4>
+                      <div className="space-y-2 text-gray-700 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                          <span>Real-time table availability</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                          <span>Dining room & seating preference</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
+                          <span>Special occasion & dietary notes</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-6 border-t border-gray-200">
+                    <button className="w-full bg-gray-900 text-white py-3 px-6 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-200"
+                            onClick={() => setShowDemoModal(null)}>
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+      </div>
+    </>
+  )
+}
+
+export default Home
